@@ -12,4 +12,4 @@ export default function useForm(initialSuccessMessage, initialValue) {
 
 
   return [showSuccessMessage, setShowSuccessMessage, values, handleChanges]
-}
+};
