@@ -9,6 +9,26 @@ export default class PlantList extends Component {
   //   - set the returned plants array to this.state.plants
 
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
+
+  // Setting initial state
+  state = {
+    plants: []
+  }
+
+  componentDidMount(){
+    // Axios call to retrieve plants from server and set to state
+    axios
+      .get('http://localhost:3333/plants')
+      .then(res => {
+        this.setState({
+          plants: res.data.plantsData
+        });
+      })
+      .catch(err => {
+        console.error('Something went wrong: ', err);
+      })
+  }
+
   render() {
     return (
       <main className="plant-list">
