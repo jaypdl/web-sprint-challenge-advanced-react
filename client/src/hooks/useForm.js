@@ -2,6 +2,9 @@
 import React, { useState } from 'react';
 
 const useForm = (initialValue, initialSuccess) => {
+
+   // Decided to also include the 'show success message' functionality even though not all forms might not use it, because is allows the hook to work for both forms that do and don't need that functionality.
+
    const [showSuccessMessage, setShowSuccessMessage] = useState(initialSuccess);
    const [values, setValues] = useState(initialValue);
 
